@@ -42,9 +42,9 @@ public class PreAndPostAndInOrderTraversal {
 			return;
 		}
 		else {
-			preOrderTraversal(root.leftNode);
+			inOrderTraversal(root.leftNode);
 			System.out.print(root.data + " ");
-			preOrderTraversal(root.rightNode);
+			inOrderTraversal(root.rightNode);
 		}
 	}
 	private static void postOrderTraversal(Node root) {
