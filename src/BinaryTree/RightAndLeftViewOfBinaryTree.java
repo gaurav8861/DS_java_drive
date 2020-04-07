@@ -3,7 +3,7 @@ package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RightViewOfBinaryTree {
+public class RightAndLeftViewOfBinaryTree {
 
 	public static void main(String[] args) {
 		Node root = new Node(1);
