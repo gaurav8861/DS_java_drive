@@ -3,15 +3,9 @@ package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * 
- * Space Complexity - O(n) (both iterative as well as recursive)
- * Time Complexity - O(n) (both iterative as well as recursive)
- *
- */
-
-public class NumberOfNodesOfBinaryTree {
+public class LeafNodeInBinaryTree {
 	public static void main(String[] args) {
+		
 		Node root = new Node(1);
 		root.leftNode = new Node(2);
 		root.rightNode = new Node(3);
@@ -20,29 +14,32 @@ public class NumberOfNodesOfBinaryTree {
 		root.rightNode.leftNode = new Node(6);
 		root.rightNode.rightNode = new Node(7);
 		root.rightNode.leftNode.rightNode = new Node(8);
-		root.rightNode.leftNode.leftNode = new Node(9);
 		
-		System.out.println("Number of nodes in binary tree (Iterative way).");
-		System.out.println(numberOfNodesinBinaryTree(root));
+		System.out.println("Leaf Node in Binary Tree (Iterative way)");
+		System.out.println(leafNodesInBinaryTreeIterative(root));
 		
-		System.out.println("Number of nodes in binary tree (Recursive way).");
-		System.out.println(numberOfNodesinBinaryTreeRecursive(root));
+		System.out.println("Leaf Node in Binary Tree (Recursive way)");
+		System.out.println(leafNodesInBinaryTreeRecursive(root));
+	}
 
-}
-
-	private static int numberOfNodesinBinaryTreeRecursive(Node root) {
+	private static int leafNodesInBinaryTreeRecursive(Node root) {
 		if(root == null) {
 			return 0;
 		} else {
-			int countL = numberOfNodesinBinaryTreeRecursive(root.leftNode);
-			int countR = numberOfNodesinBinaryTreeRecursive(root.rightNode);
-			return countL + countR + 1;
+			int countL = leafNodesInBinaryTreeRecursive(root.leftNode);
+			int countR = leafNodesInBinaryTreeRecursive(root.rightNode);
+			if(root.leftNode == null && root.rightNode == null)
+				return countL + countR + 1;
+			else {
+				return countL + countR;
+			}
 		}
+		
 	}
 
-	private static int numberOfNodesinBinaryTree(Node root) {
-		int count = 0;
+	private static int leafNodesInBinaryTreeIterative(Node root) {
 		Queue<Node> queue = new LinkedList<Node>();
+		int count = 0;
 		if(root == null) {
 			return 0;
 		} else {
@@ -50,7 +47,9 @@ public class NumberOfNodesOfBinaryTree {
 			while(!queue.isEmpty()) {
 				root = queue.peek();
 				queue.remove();
-				count++;
+				if(root.leftNode == null && root.rightNode == null) {
+					count++;
+				}
 				if(root.leftNode != null) {
 					queue.add(root.leftNode);
 				}
@@ -61,4 +60,5 @@ public class NumberOfNodesOfBinaryTree {
 		}
 		return count;
 	}
+
 }
