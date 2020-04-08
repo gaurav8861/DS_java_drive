@@ -15,10 +15,23 @@ public class NumberOfNodesOfBinaryTree {
 		root.rightNode.leftNode.rightNode = new Node(8);
 		root.rightNode.leftNode.leftNode = new Node(9);
 		
-		System.out.println("Number of nodes in binary tree.");
+		System.out.println("Number of nodes in binary tree (Iterative way).");
 		System.out.println(numberOfNodesinBinaryTree(root));
+		
+		System.out.println("Number of nodes in binary tree (Recursive way).");
+		System.out.println(numberOfNodesinBinaryTreeRecursive(root));
 
 }
+
+	private static int numberOfNodesinBinaryTreeRecursive(Node root) {
+		if(root == null) {
+			return 0;
+		} else {
+			int countL = numberOfNodesinBinaryTreeRecursive(root.leftNode);
+			int countR = numberOfNodesinBinaryTreeRecursive(root.rightNode);
+			return countL + countR + 1;
+		}
+	}
 
 	private static int numberOfNodesinBinaryTree(Node root) {
 		int count = 0;
