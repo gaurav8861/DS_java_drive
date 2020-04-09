@@ -1,5 +1,17 @@
 package BinaryTree;
-
+/**
+ * 							
+ *                          1
+ *                        /   \
+ *                      2       3
+ *                    /   \   /   \
+ *                   4     5  6    7
+ *                        /         \
+ *                       8           9
+ *                       
+ *    Left view -  1, 2, 4, 8
+ *    Right view - 1, 3, 7, 9
+ */
 import java.util.LinkedList;
 import java.util.Queue;
 

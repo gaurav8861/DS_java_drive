@@ -1,4 +1,15 @@
 package BinaryTree;
+/**
+ *                          1
+ *                        /   \
+ *                      2       3
+ *                    /   \   /   \
+ *                   4     5  6    7
+ *                        /         \
+ *                       8           9
+ *                       
+ *             Spiral View of binary tree - (1, 3, 2, 4, 5, 6, 7, 9, 8)
+*/
 
 import java.util.Stack;
 
