@@ -1,6 +1,6 @@
 package BinaryTree;
 /**
- * 							1
+ *                          1
  *                        /   \
  *                      2       3
  *                    /   \   /   \
@@ -11,7 +11,7 @@ package BinaryTree;
  *                       
  *              MIRROR of above binary tree 
  *              
- * 							1
+ *                          1
  *                        /   \
  *                       3      2
  *                     /   \   /  \
