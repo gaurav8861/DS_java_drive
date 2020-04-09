@@ -1,4 +1,15 @@
 package BinaryTree;
+/**
+ *                          1
+ *                        /   \
+ *                      2       3
+ *                    /   \   /   \
+ *                   4     5  6    7
+ *                        /         \
+ *                       8           9
+ *
+ * 		Diagonal view : 1, 3, 7, 9, 2, 5, 6, 4, 8 
+ */
 
 import java.util.ArrayList;
 import java.util.HashMap;
