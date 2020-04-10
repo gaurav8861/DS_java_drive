@@ -1,5 +1,15 @@
 package BinaryTree;
-
+/**
+ *                             1
+ *                          /     \
+ *                        2         3
+ *                      /  \      /   \
+ *                    4     5    6     7
+ *                                \ 
+ *                                 8
+ *   Leaf node : (4, 5, 8, 7) 
+ *   Number    : 4
+ */
 import java.util.LinkedList;
 import java.util.Queue;
 
