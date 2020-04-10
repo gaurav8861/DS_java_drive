@@ -35,14 +35,12 @@ public class LeafNodeInBinaryTree {
 	private static int leafNodesInBinaryTreeRecursive(Node root) {
 		if(root == null) {
 			return 0;
+		} else if(root.leftNode == null && root.rightNode == null) {
+			return 1;
 		} else {
 			int countL = leafNodesInBinaryTreeRecursive(root.leftNode);
 			int countR = leafNodesInBinaryTreeRecursive(root.rightNode);
-			if(root.leftNode == null && root.rightNode == null)
-				return countL + countR + 1;
-			else {
-				return countL + countR;
-			}
+			return countL + countR;
 		}
 		
 	}
