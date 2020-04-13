@@ -2,17 +2,53 @@ package BinarySearchTree;
 
 public class Main {
 	
-	public static void main(String[] args) {
-		BST bst = new BST();
-		bst.insert(12);
-		bst.insert(34);
-		bst.insert(78);
-		bst.insert(31);
-		bst.insert(9);
-		bst.insert(56);
-		bst.insert(10);
+	public static void main(String[] args) throws Exception {
 		
-		bst.printNodes();
+		/**
+		 * 				8
+		 * 			   / \
+		 * 			 /     \
+		 * 			3	     10
+		 * 		   / \		   \
+		 * 		  /   \          \
+		 * 		1		6	      13
+		 *             / \         \
+		 *            /   \         \
+ 		 * 		     4		7	    14
+		 * 
+		 */
+		
+		Node root = null;
+		BST bst = new BST();
+		root = bst.insertNode(root, 16);
+		root = bst.insertNode(root, 6);
+		root = bst.insertNode(root, 2);
+		root = bst.insertNode(root, 12);
+		root = bst.insertNode(root, 20);
+		root = bst.insertNode(root, 26);
+		root = bst.insertNode(root, 28);
+		
+		root = bst.insertNode(root, 13);
+		root = bst.insertNode(root, 15);
+				
+		root = bst.insertNode(root, 8);
+		root = bst.insertNode(root, 14);
+		
+		
+		System.out.println("- - - - - - - - - - Before deleting - - - - - - - - - -");
+		// Print node data
+		bst.inOrderTraversal(root);
+		System.out.println();
+		
+//		// Deleting 6 
+//		bst.deleteNode(root, 8);
+//		//bst.deleteRec(root, 12);
+//		
+//		System.out.println("- - - - - - - - - - After deleting - - - - - - - - - -");
+//		bst.inOrderTraversal(root);
+//		System.out.println();
+		
+		System.out.println("- - - - - - - - - - Searching node - - - - - - - - - -");
+		bst.searchNode(root, 26);
 	}
-
 }

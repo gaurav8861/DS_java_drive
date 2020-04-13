@@ -1,5 +1,3 @@
-package BinaryTree;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -12,14 +10,8 @@ import java.util.Queue;
  *                             /   \ 
  *                            9     8
  *   Number of nodes : 9 (1, 2, 3, 4, 5, 6, 7, 8, 9) 
- *   
- *   
- * Space Complexity - O(n) (both iterative as well as recursive)
- * Time Complexity - O(n) (both iterative as well as recursive)
- *
  */
-
-public class NumberOfNodesOfBinaryTree {
+public class PracticeNumberOfNodesInTree {
 	public static void main(String[] args) {
 		Node root = new Node(1);
 		root.leftNode = new Node(2);
@@ -30,42 +22,40 @@ public class NumberOfNodesOfBinaryTree {
 		root.rightNode.rightNode = new Node(7);
 		root.rightNode.leftNode.rightNode = new Node(8);
 		root.rightNode.leftNode.leftNode = new Node(9);
-		
+
 		System.out.println("Number of nodes in binary tree (Iterative way).");
-		System.out.println(numberOfNodesinBinaryTree(root));
-		
+		System.out.println(numberOfNodesinBinaryTreeIterative(root));
+
 		System.out.println("Number of nodes in binary tree (Recursive way).");
 		System.out.println(numberOfNodesinBinaryTreeRecursive(root));
 
-}
+	}
 
 	private static int numberOfNodesinBinaryTreeRecursive(Node root) {
-		if(root == null) {
+		if(root == null)
 			return 0;
-		} else {
-			int countL = numberOfNodesinBinaryTreeRecursive(root.leftNode);
-			int countR = numberOfNodesinBinaryTreeRecursive(root.rightNode);
-			return countL + countR + 1;
+		else {
+			int cl = numberOfNodesinBinaryTreeRecursive(root.leftNode);
+			int cr = numberOfNodesinBinaryTreeIterative(root.rightNode);
+			return cl + cr + 1;
 		}
 	}
 
-	private static int numberOfNodesinBinaryTree(Node root) {
-		int count = 0;
+	private static int numberOfNodesinBinaryTreeIterative(Node root) {
 		Queue<Node> queue = new LinkedList<Node>();
-		if(root == null) {
+		int count = 0;
+		if(root == null)
 			return 0;
-		} else {
+		else {
 			queue.add(root);
 			while(!queue.isEmpty()) {
 				root = queue.peek();
-				queue.remove();
 				count++;
-				if(root.leftNode != null) {
+				queue.remove();
+				if(root.leftNode != null)
 					queue.add(root.leftNode);
-				}
-				if(root.rightNode != null) {
+				if(root.rightNode != null)
 					queue.add(root.rightNode);
-				}
 			}
 		}
 		return count;
