@@ -5,7 +5,12 @@ class Node {
 	Node leftNode;
 	int data;
 	Node rightNode;
-
+	
+	public Node() {
+	}
+	public Node(int data) {
+		this.data = data;
+	}
 }
 
 class BST {

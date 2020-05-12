@@ -1,4 +1,8 @@
 package BinaryTree;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 /**
  *                             1
  *                          /     \
@@ -25,6 +29,15 @@ public class NonLeafNodeInBinaryTree {
 		
 		System.out.println("Non-leaf node in binary tree");
 		System.out.println(nonLeafNodeInBinaryTree(root));
+		
+		String ds = "1234";
+		String encodedString = Base64.getEncoder().encodeToString(ds.getBytes(StandardCharsets.UTF_16));
+		System.out.println(encodedString);
+		
+		Base64.Encoder encoder = Base64.getMimeEncoder();  
+		String eStr = encoder.encodeToString(ds.getBytes());  
+        System.out.println("Encoded MIME message: "+eStr);  
+		
 	}
 
 	private static int nonLeafNodeInBinaryTree(Node root) {
@@ -32,5 +45,8 @@ public class NonLeafNodeInBinaryTree {
 			return 0;
 
 		return 1 + nonLeafNodeInBinaryTree(root.leftNode) + nonLeafNodeInBinaryTree(root.rightNode);
+		
+		
+		
 	}
 }

@@ -27,8 +27,8 @@ public class LowestCommonAncestorInBinaryTree {
 		inOrderTraversal(root);
 		System.out.println();
 		
-		int num1 = 8;
-		int num2 = 9;
+		int num1 = 9;
+		int num2 = 7;
 		System.out.println("Lowest common ancestor of " + num1 + " and " + num2);
 		Node n = lowestCommonAncestor(root, num1, num2);
 		System.out.println(n.data);
@@ -46,8 +46,7 @@ public class LowestCommonAncestorInBinaryTree {
         if(left != null && right != null){
             return root;
         }
-        Node ancestor = ((left == null) ? right : left);
-		return ancestor;
+        return ((left == null) ? right : left);
 	}
 
 	private static void inOrderTraversal(Node root) {
