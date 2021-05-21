@@ -58,20 +58,20 @@ public class PracticeDiagonalInBinaryTree {
 			}
 		}
 		for (Integer key : result.keySet()) {
-			for (Node node : result.get(key)) {
-				System.out.print(node.data + " ");
+			for (Node Node : result.get(key)) {
+				System.out.print(Node.data + " ");
 			}
 			System.out.println();
 		}
 	}
 
-	private static void addElementInResultMap(Map<Integer, List<Node>> result, int hd, Node node) {
+	private static void addElementInResultMap(Map<Integer, List<Node>> result, int hd, Node Node) {
 		if(result.containsKey(hd)) {
 			List<Node> listOfNodes = result.get(hd);
-			listOfNodes.add(node);
+			listOfNodes.add(Node);
 		}else {
 			List<Node> listOfNodes = new ArrayList<Node>();
-			listOfNodes.add(node);
+			listOfNodes.add(Node);
 			result.put(hd, listOfNodes);
 		}
 	}
