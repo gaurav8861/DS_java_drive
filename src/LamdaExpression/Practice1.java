@@ -10,11 +10,11 @@ public class Practice1 {
     public static List<Employee> getEmployees(){
         List<Employee> employeeList=new ArrayList<>();
 
-        Employee e1=new Employee("John",21);
-        Employee e2=new Employee("Martin",19);
-        Employee e3=new Employee("Mary",31);
-        Employee e4=new Employee("Stephan",18);
-        Employee e5=new Employee("Gary",26);
+        Employee e1=new Employee("John",21, new Address("India", "Bengaluru"));
+        Employee e2=new Employee("Martin",19, new Address("Pakistan", "Karanchi"));
+        Employee e3=new Employee("Mary",31, new Address("India", "Mumbai"));
+        Employee e4=new Employee("Stephan",18, new Address("USA", "NY"));
+        Employee e5=new Employee("Gary",26, new Address("UK", "London"));
 
         employeeList.add(e1);
         employeeList.add(e2);
@@ -113,5 +113,10 @@ public class Practice1 {
             System.out.println(l2.getAsDouble());
         }
 
+        /**
+         * Given the list of employee, filter employee whose country is India?
+         */
+        List<Employee> lst2 = employeeList.stream().filter(o -> o.getAddress().getCountry().equalsIgnoreCase("India")).collect(Collectors.toList());
+        System.out.println(lst2);
     }
 }
