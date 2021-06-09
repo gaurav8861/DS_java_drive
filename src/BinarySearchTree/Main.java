@@ -48,7 +48,35 @@ public class Main {
 //		bst.inOrderTraversal(root);
 //		System.out.println();
 		
-		System.out.println("- - - - - - - - - - Searching node - - - - - - - - - -");
-		bst.searchNode(root, 26);
+//		System.out.println("- - - - - - - - - - Searching node - - - - - - - - - -");
+//		bst.searchNode(root, 26);
+
+
+		System.out.println(checkBST(root));
+
+		Node root1 = new Node(10);
+		root1.leftNode = new Node(11);
+
+		System.out.println(checkBST(root1));
+	}
+		public static boolean checkBST(Node root) {
+			if (root == null){
+				return false;
+			}
+			return checkBSTre(root);
+		}
+	public static boolean checkBSTre(Node root) {
+		if ((root.leftNode != null) && (root.data < root.leftNode.data)){
+			return false;
+		}
+		else if ((root.rightNode != null) && (root.data > root.rightNode.data)){
+			return false;
+		}else {
+			if (root.leftNode != null)
+				checkBSTre(root.leftNode);
+			if (root.rightNode != null)
+				checkBSTre(root.rightNode);
+			return true;
+		}
 	}
 }

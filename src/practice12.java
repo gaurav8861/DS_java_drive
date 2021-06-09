@@ -2,22 +2,42 @@ import java.util.*;
 
 
 public class practice12 {
-    List<Integer> lst = Arrays.asList(1, 2, 3, 4, 5, 6, 4, 3, 2, 1);
 
-    public static void main(String[] args) {
+    public static int gcd(int a, int b){
+        if(b==0)
+            return a;
+        return gcd(a, a%b);
+    }
 
-        Map<Integer, Integer> map = new HashMap<>();
-        for (Integer i : new practice12().lst){
-            if(map.get(i) == null){
-                map.put(i, 0);
-            }else {
-                map.put(i, map.get(i)+1);
+    public static int lcm(int a, int b){
+        return ((a*b)/gcd(a, b));
+    }
+
+    static int findGCD(int arr[], int n)
+    {
+        int result = arr[0];
+        for (int element: arr){
+            result = gcd(result, element);
+
+            if(result == 1)
+            {
+                return 1;
             }
         }
-        for (Integer key : map.keySet()){
-            if (map.get(key) == 0){System.out.println(key);};
-        }
 
+        return result;
+    }
+
+    public static void main(String[] args) {
+//        int a = 0;
+//        int b = 15;
+
+//        System.out.println(gcd(a,b));
+//        System.out.println(lcm(a, b));
+
+        int arr[] = { 2, 4, 6, 8, 16 };
+        int n = arr.length;
+        System.out.println(findGCD(arr, n));
 
     }
 

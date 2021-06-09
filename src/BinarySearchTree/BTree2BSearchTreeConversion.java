@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *	Binary Tree to Binary Search Tree Conversion
- *	Solution
+ *	SolutionDoublyLl
 	Following is a 3 step solution for converting Binary tree to Binary Search Tree.
 		1) Create a temp array arr[] that stores inorder traversal of the tree. This step takes O(n) time.
 		2) Sort the temp array arr[]. Time complexity of this step depends upon the sorting algorithm. 

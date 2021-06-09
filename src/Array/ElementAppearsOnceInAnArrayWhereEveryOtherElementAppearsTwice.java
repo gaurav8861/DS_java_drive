@@ -11,7 +11,7 @@ package Array;
  */
 
 /**
- * Solution : 
+ * SolutionDoublyLl :
  * Let us consider the above example.  
  * Let ^ be xor operator as in C and C++.
  * res = 7 ^ 3 ^ 5 ^ 4 ^ 5 ^ 3 ^ 4

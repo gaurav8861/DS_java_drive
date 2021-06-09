@@ -58,4 +58,4 @@ public class leftRotate {
 		printArray(arr); 
 	} 
 } 
-/*This code is contributed by Devesh Agrawal*/
+

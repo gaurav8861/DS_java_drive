@@ -4,6 +4,8 @@ package Array;
  * Find the minimum number of swaps required to bring all the numbers less than or equal to k together.
  */
 
+import java.util.Arrays;
+
 /**
  * Input:  arr[] = {2, 1, 5, 6, 3}, k = 3
  * Output: 1
@@ -21,6 +23,10 @@ public class MinimumSwapsRequiredToBringAllElementsLessThanOrEqualToKTogether {
 		int arr[] = {2, 1, 5, 6, 3, 0};
 		int k = 3;
 		int size = arr.length;
+		System.out.println("-----------------Sorting");
+//		Arrays.asList(arr);
+		Arrays.sort(arr);
+		Arrays.stream(arr).forEach(System.out::println);
 		System.out.println(NoOfSwapsToBringElementsOnOneSide(arr, k, size));
 	}
 

@@ -152,22 +152,31 @@ public class Practice {
 //        System.out.println(compareLists(llist.head, llist1.head));
 //        printSinglyLinkedList(llist.head);
 
-        System.out.println("---------");
-//        System.out.println(getNode(llist1.head, 0));
+//        System.out.println("---------");
+//        printSinglyLinkedList(llist.head);
+//        System.out.println("reverse ---------");
+//        SinglyLinkedListNode h = reverse(llist.head);
+//        printSinglyLinkedList(h);
+//        System.out.println(getNode(llist.head, 1));
 
-        System.out.println(reverse(llist.head));
+//        System.out.println(reverse(llist.head));
 
+
+        List<Integer> lst = Arrays.asList(1,2,3,4,5);
+        System.out.println("Before ---------");
+        System.out.println(lst);
+        System.out.println("After ----------");
+        System.out.println(rotateLeft(2, lst));
     }
 
     static int getNode(SinglyLinkedListNode head, int positionFromTail) {
-        int i = 0;
         SinglyLinkedListNode pointer = head;
         SinglyLinkedListNode n = head;
         while(head != null){
-            if(i == positionFromTail){
+            if(0 == positionFromTail){
                 pointer = n;
             }
-            i++;
+            positionFromTail--;
             if (head.next == null){
                 pointer = pointer;
                 break;
@@ -217,12 +226,35 @@ public class Practice {
         return false;
     }
 
-        static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
-        while (head != null) {
-            System.out.println(head.data);
-            head = head.next;
+    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
+        SinglyLinkedListNode head = llist;
+        SinglyLinkedListNode prev = null;
+
+        while (llist != null){
+            SinglyLinkedListNode tmp = llist.next;
+            llist.next = prev;
+            prev = llist;
+            if (tmp != null)
+                llist = tmp;
+            else return llist;
         }
-        return head;
+        return llist;
+    }
+
+    public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+        if(d == 0){
+            return arr;
+        }
+        for(int i = 0; i < d ; i++){
+            int tmp = arr.get(0);
+            for(int j =0 ; j< arr.size(); j++){
+                if(j+1 <= arr.size()-1){
+                    arr.set(j, arr.get(j+1));
+                }
+            }
+            arr.set(arr.size()-1, tmp);
+        }
+        return arr;
     }
 
 }

@@ -4,6 +4,11 @@ package Array;
 sorted and rotated array using 
 single pass of Binary Search*/
 
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * 
  * @author gkumar
@@ -26,7 +31,8 @@ public class ArraySearchRotatedAndSorted
 { 	
 	//main function 
 	public static void main(String args[]) 
-	{ 
+	{
+
 		int arr[] = {4, 5, 6, 7, 8, 9, 1, 2, 3}; 
 		int n = arr.length; 
 		int key = 2; 
@@ -34,7 +40,85 @@ public class ArraySearchRotatedAndSorted
 		if (i != -1) 
 			System.out.println("Index: " + i); 
 		else
-			System.out.println("Key not found"); 
+			System.out.println("Key not found");
+
+
+		List<Integer> lst = Arrays.asList(1,2,3,4,5);
+		int sum = lst.stream().mapToInt(a -> a).sum();
+		System.out.println(sum);
+		System.out.println(lst.stream().allMatch(j -> j>1));
+		lst = lst.subList(2, lst.size());
+		System.out.println(lst);
+
+		double d = (double)2/(double)6;
+		System.out.println((double)2/(double)6);
+
+
+		String str = "";
+		int n1 = 6;
+		for(int st = 0; st < n1; st++){
+			str = "";
+			for (int k = n1-2-st; k >= 0; k--){
+				str += " ";
+			}
+			int d1 = st;
+			while(d1-- >= 0){
+				str += "#";
+			}
+			System.out.println(str);
+		}
+
+
+
+		List<Integer> lll = Arrays.asList(1, 6, 4, 5, 6);
+		OptionalInt max = lll.stream().mapToInt(a -> a).max();
+
+		System.out.println(max.getAsInt());
+
+		long count = lll.stream().filter(a -> a == max.getAsInt()).count();
+		System.out.println("count " + count);
+
+		HashMap<Integer, Integer> collect = lll.stream()
+				.collect(Collectors.toMap(
+						Function.identity(),
+						word -> 1,
+						(a, b) -> a + b,
+						HashMap::new));
+		System.out.println(collect);
+
+
+
+
+
+		System.out.println();
+
+
+
+		String s1 = "hello";
+		String s2 = "world";
+
+		for(int e=0; e<s1.length() ;e++){
+			if (s2.contains(Character.toString(s1.charAt(e)))){
+				System.out.println("YES");
+				break;
+			}
+		}
+		System.out.println("No");
+
+
+
+
+		char[] s12 = s1.toCharArray();
+		char[] s12reverse = new char[s12.length];
+
+		for (int ii=0; ii < s12.length; ii++){
+			s12reverse[s12.length-1 - ii] = s12[ii];
+		}
+		for(int r=0; r< s12.length-1 ;r++){
+			if (Math.abs(s12[r] - s12[r+1]) != Math.abs(s12reverse[r] - s12reverse[r+1])){
+				return;
+			}
+		}
 	}
 
 	private static int search(int[] arr, int l, int h, int key) {

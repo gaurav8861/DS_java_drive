@@ -32,7 +32,7 @@ public class SizeOfBinaryTree {
 		if(node == null) {
 			return 0;
 		}else {
-			return size(node.leftNode) + 1 + size(node.rightNode);
+				return size(node.leftNode) + 1 + size(node.rightNode);
 		}
 	}
 
