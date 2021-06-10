@@ -45,7 +45,7 @@ public class Main {
 //		//bst.deleteRec(root, 12);
 //		
 //		System.out.println("- - - - - - - - - - After deleting - - - - - - - - - -");
-//		bst.inOrderTraversal(root);
+//		bst.printInOrderTraversal(root);
 //		System.out.println();
 		
 //		System.out.println("- - - - - - - - - - Searching node - - - - - - - - - -");
