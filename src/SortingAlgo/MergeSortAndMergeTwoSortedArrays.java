@@ -24,7 +24,7 @@ public class MergeSortAndMergeTwoSortedArrays {
 //        List<Integer> l3 = mergeSortedArrays(l1, l2);
 //        System.out.println(l3);
 
-        int l1[] = new int[]{11, 2, 10, 9, 5};
+        int l1[] = new int[]{11, 2, 10, 9, 5, 6};
         mergeSort(l1, 0, l1.length -1);
         Arrays.stream(l1).forEach(System.out::println);
 //        mergeSortedArrays(l1,0, 2, 4);
