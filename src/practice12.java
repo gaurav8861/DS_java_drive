@@ -29,16 +29,20 @@ public class practice12 {
     }
 
     public static void main(String[] args) {
-//        int a = 0;
-//        int b = 15;
+        List<Integer> grades = Arrays.asList(73, 67,38, 33);
+        System.out.println(gradingStudents(grades));
 
-//        System.out.println(gcd(a,b));
-//        System.out.println(lcm(a, b));
-
-        int arr[] = { 2, 4, 6, 8, 16 };
-        int n = arr.length;
-        System.out.println(findGCD(arr, n));
-
+    }
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+        for(int i=0; i< grades.size(); i++){
+            if(grades.get(i) >= 38){
+                int diff = 5 - (grades.get(i) % 5);
+                if (3 > diff){
+                    grades.set(i, grades.get(i)+diff);
+                }
+            }
+        }
+        return grades;
     }
 
 }
