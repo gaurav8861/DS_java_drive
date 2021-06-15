@@ -9,6 +9,7 @@ public class BubbleSort {
         int arr[] = new int[]{11, 2, 10, 9, 5, 6};
         bubbleSort(arr);
         Arrays.stream(arr).forEach(a->System.out.print(a+" "));
+
     }
 
     private static void bubbleSort(int[] arr) {
