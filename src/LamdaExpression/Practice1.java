@@ -118,5 +118,20 @@ public class Practice1 {
          */
         List<Employee> lst2 = employeeList.stream().filter(o -> o.getAddress().getCountry().equalsIgnoreCase("India")).collect(Collectors.toList());
         System.out.println(lst2);
+
+        /**
+         *
+         1.Write a program to print employee details working in each department
+
+         2.Write a program to print employees count working in each department
+
+         3.Write a program to print active and inactive employees in the given collection
+
+         4.Write a program to print Max/Min employee salary from the given collection
+
+         5.Write a program to print the max salary of an employee from each department
+         */
+
+
     }
 }

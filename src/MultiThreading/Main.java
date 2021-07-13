@@ -27,6 +27,11 @@ class Printer{
     public Printer(int range){
         this.range = range;
     }
+
+    public Printer() {
+
+    }
+
     public void printEven(){
         for (int i=0; i <= range; i+=2){
             System.out.println("Even : "+ i + " " + Thread.currentThread().getName());
