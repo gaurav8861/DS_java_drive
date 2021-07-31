@@ -14,6 +14,6 @@ class A{
 public class Question6 {
     public static void main(String[] args) {
         A a = new A();
-        a.printStringData(null);
+//        a.printStringData(null);
     }
 }
