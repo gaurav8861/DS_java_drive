@@ -15,6 +15,10 @@ import java.util.stream.Stream;
  4.Write a program to print Max/Min employee salary from the given collection
 
  5.Write a program to print the max salary of an employee from each department
+
+ 6.Write a program to print the average salary of an employee
+
+ 6.Write a program to convert list of employee to map with name and salary.
  */
 class Employee{
     private Integer empId;
@@ -130,8 +134,12 @@ public class Main {
         System.out.println(collect);
         System.out.println();
 
-        Optional<Employee> min = employeeList.stream().min(Comparator.comparing(Employee::getSalary));
+        Map<String, Long> collect6 = employeeList.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.counting()));
         System.out.println("Write a program to print employees count working in each department");
+        System.out.println(collect6);
+
+        Optional<Employee> min = employeeList.stream().min(Comparator.comparing(Employee::getSalary));
+        System.out.println("Write a program to print employees with minimum salary");
         System.out.println(min.get());
         System.out.println();
 
@@ -169,5 +177,13 @@ public class Main {
         System.out.println("Write a program to print the max salary of an employee from each department");
         System.out.println(collect4);
         System.out.println();
+
+        System.out.println("Write a program to print the average salary of an employee");
+        double asDouble = employeeList.stream().mapToDouble(Employee::getSalary).average().getAsDouble();
+        System.out.println(asDouble);
+
+        System.out.println("Write a program to convert list of employee to map with name and salary.");
+        Map<String, Long> collect5 = employeeList.stream().collect(Collectors.toMap(Employee::getEmpName, Employee::getSalary));
+        System.out.println(collect5);
     }
 }

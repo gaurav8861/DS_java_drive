@@ -6,6 +6,28 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Practice1 {
+    /**
+     *
+     * 1. Given a list of employees, you need to filter all the employee whose age is greater than 20 and print the employee names.(Java 8 APIs only)
+     *
+     * 2. Given the list of employees, count number of employees with age 25
+     *
+     * 3. Given the list of employees, find the employee with name “Mary”.
+     *
+     * 4. Given a list of employee, find maximum age of employee?
+     *
+     * 5. Given a list of employees, sort all the employee on the basis of age? Use java 8 APIs only
+     *
+     * 6. Join the all employee names with “,” using java 8?
+     *
+     * 7. Given the list of employee, group them by employee name?
+     *
+     * 8. Given the list of numbers, remove the duplicate elements from the list.
+     *
+     * 9. Given a list of numbers, square them and filter the numbers which are greater 10000 and then find average of them.( Java 8 APIs only)
+     *
+     * 10. Given the list of employee, filter employee whose country is India?
+     */
 
     public static List<Employee> getEmployees(){
         List<Employee> employeeList=new ArrayList<>();
